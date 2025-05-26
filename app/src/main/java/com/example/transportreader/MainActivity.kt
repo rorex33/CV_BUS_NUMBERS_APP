@@ -1,3 +1,24 @@
+/**
+ * Главная Activity приложения для распознавания транспортных средств.
+ *
+ * Основной функционал:
+ * - Захват видео с камеры в реальном времени
+ * - Обработка кадров через PyTorch модель (классификация + OCR)
+ * - Озвучивание результатов через TextToSpeech
+ *
+ * Ключевые компоненты:
+ * 1. CameraX - работа с камерой
+ * 2. PyTorch Mobile - выполнение ML-модели
+ * 3. TextToSpeech - голосовой вывод
+ *
+ * Архитектура:
+ * - MainActivity (UI слой)
+ *   |- CameraProvider (управление камерой)
+ *   |- ImageAnalyzer (обработка кадров)
+ *   |- PyTorch Module (ML модель)
+ *   |- TextToSpeech (голосовой вывод)
+ */
+
 package com.example.transportreader
 
 import android.Manifest

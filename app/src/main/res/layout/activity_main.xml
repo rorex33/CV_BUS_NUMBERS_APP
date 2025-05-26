@@ -1,9 +1,34 @@
+<!--
+Основной layout экрана для отображения камеры и результатов распознавания.
+Структура:
+1. PreviewView - область предпросмотра камеры
+2. TextView (tvResult) - отображение основного результата (класс транспорта и номер)
+3. TextView (tvStatus) - отображение статуса и дополнительной информации
+
+Особенности:
+- Использует ConstraintLayout для гибкого позиционирования элементов
+- Полупрозрачный фон текстовых элементов для лучшей читаемости
+- Адаптивная разметка под разные размеры экранов
+
+Иерархия элементов:
+- ConstraintLayout (корневой)
+  |- PreviewView (занимает основную часть экрана)
+  |- TextView (tvResult) - фиксируется над tvStatus
+  |- TextView (tvStatus) - фиксируется внизу экрана
+-->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--
+    Область предпросмотра камеры.
+    Занимает все доступное пространство между верхом экрана и tvResult.
+    Настройки:
+    - match_constraints (0dp) для адаптивности
+    - Центрирование по горизонтали
+    -->
     <androidx.camera.view.PreviewView
         android:id="@+id/previewView"
         android:layout_width="0dp"
@@ -13,6 +38,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/tvResult" />
 
+    <!--
+    Основное текстовое поле для вывода результатов.
+    Отображает:
+    - Тип транспорта (автобус, троллейбус и т.д.)
+    - Распознанный номер (если есть)
+    Настройки:
+    - Полупрозрачный темный фон (#AA000000)
+    - Крупный жирный текст
+    - Паддинги для лучшей читаемости
+    -->
     <TextView
         android:id="@+id/tvResult"
         android:layout_width="0dp"
@@ -26,6 +61,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/tvStatus" />
 
+    <!--
+    Поле статуса и дополнительной информации.
+    Отображает:
+    - Статус работы камеры
+    - Сообщения об ошибках
+    - Отладочную информацию
+    Настройки:
+    - Фиксируется внизу экрана
+    - Меньший размер текста по сравнению с tvResult
+    -->
     <TextView
         android:id="@+id/tvStatus"
         android:layout_width="0dp"
