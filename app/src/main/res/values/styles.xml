@@ -1,0 +1,16 @@
+<resources>
+    <!-- Базовая тема приложения -->
+    <style name="Theme.TransportReader" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/teal_200</item>
+
+        <!-- Для Material Components используйте вместо colorAccent:
+        <item name="colorSecondary">@color/teal_200</item>
+        -->
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">?attr/colorPrimaryDark</item>
+    </style>
+</resources>
