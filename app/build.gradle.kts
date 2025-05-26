@@ -90,4 +90,10 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview:1.6.0")     // Инструменты превью
     implementation("androidx.compose.material3:material3:1.2.0")       // Material Design 3
     debugImplementation("androidx.compose.ui:ui-tooling:1.6.0")        // Инструменты для отладки
+
+    // Тестирование (Instrumented Tests)
+    implementation("androidx.test.ext:junit:1.1.5")
+    implementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation("androidx.test:runner:1.5.2")
+    implementation("androidx.test:rules:1.5.0")
 }
